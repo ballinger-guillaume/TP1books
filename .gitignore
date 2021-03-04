@@ -106,6 +106,9 @@ local.properties
 
 ## File-based project format:
 *.iws
+## idea
+.idea\*
+
 
 ## Plugin-specific files:
 
@@ -132,3 +135,4 @@ nbdist/
 .nb-gradle/
 *.iml
 target/
+.idea/vcs.xml
