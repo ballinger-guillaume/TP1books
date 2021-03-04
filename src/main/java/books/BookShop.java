@@ -8,24 +8,26 @@ public class BookShop {
 
     /**
      * Constructor of the class Book shop
+     *
      * @param name name of the book shop
      */
-    public BookShop(String name){
+    public BookShop(String name) {
         this.name = name;
     }
 
     /**
      * method to compute the cost of a basket
+     *
      * @param books array corresponding to the number of each harry potter book the client desire to buy (books.length should return 5)
      * @return the cost in euro with the discount
      */
-    public double cost(int[] books){
+    public double cost(int[] books) {
         HashSet<Integer> booknumber = new HashSet<>();
         int unique = 0;
         int duplicated = 0;
 
         //checks for double
-        for(int book:books){
+        for (int book : books) {
             if (booknumber.contains(book)) {
                 duplicated++;
             } else {
@@ -35,23 +37,23 @@ public class BookShop {
         }
         double discount;
         //get the discount
-        switch(unique){
+        switch (unique) {
 
             case 2:
-                discount = (1.0-0.07);
+                discount = (1.0 - 0.07);
                 break;
             case 3:
-                discount = (1.0-0.14);
+                discount = (1.0 - 0.14);
                 break;
             case 4:
-                discount = (1.0-0.28);
+                discount = (1.0 - 0.28);
                 break;
             case 5:
-                discount = (1.0-0.35);
+                discount = (1.0 - 0.35);
                 break;
             default:
                 discount = 1;
         }
-        return unique*8.0*discount + duplicated*8.0;
+        return unique * 8.0 * discount + duplicated * 8.0;
     }
 }
