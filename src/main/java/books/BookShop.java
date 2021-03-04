@@ -22,16 +22,15 @@ public class BookShop {
      * @return the cost in euro with the discount
      */
     public double cost(int[] books) {
-        HashSet<Integer> booknumber = new HashSet<>();
         int unique = 0;
         int duplicated = 0;
 
         //checks for double
         for (int book : books) {
-            if (booknumber.contains(book)) {
-                duplicated++;
-            } else {
-                booknumber.add(book);
+            if (book > 1) {
+                duplicated += book-1;
+                unique++;
+            } else if(book == 1) {
                 unique++;
             }
         }
